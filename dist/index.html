@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <title>To Do App</title>
 <script defer src="main.js"></script></head>
+
 <body>
     <h1>TO DO LIST APP</h1>
+    <p>Today's To Do</p>
+    <form action="" class="form">
+        <input type="text" id="user-first-input" name="text" placeholder="Add to your list..." required>
+        <i class="fa-solid fa-arrows-rotate"></i>
+    </form>
+    <ul>
+        <li>
+            <div>
+                <input type="checkbox" value="checkbox" name="checkbox" id="checkbox">
+                <input type="text" value="text" name="text" id="edit-text-input">
+            </div>
+            <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        </li>
+    </ul>
+    <div>
+        <button type="submit">Clear all completed</button>
+    </div>
+    <footer>Copyright &#169; Ayokunnumi 2023 </footer>
 </body>
+
 </html>
