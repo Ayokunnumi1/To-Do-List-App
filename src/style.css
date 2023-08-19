@@ -7,3 +7,95 @@
   list-style: none;
   text-decoration: none;
 }
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.to-do {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid grey;
+  border-radius: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.list-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+  padding: 0 10px;
+}
+
+#edit-text-input {
+  width: 96%;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+
+.checkBox-text-input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid lightgray;
+  padding-right: 10px;
+}
+
+#user-first-input {
+  width: 96%;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.list-user-input {
+  padding: 10px;
+  width: 96%;
+}
+
+.clear-all-btn {
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  /* margin-top: 20px; */
+}
