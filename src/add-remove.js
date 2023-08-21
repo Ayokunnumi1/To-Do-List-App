@@ -5,9 +5,9 @@ export const form = document.querySelector('.form');
 export const userFirstInput = document.querySelector('#user-first-input');
 export const taskArray = getLocalStorage();
 // console.log(taskArray);
-const currentIndex = taskArray.length + 1;
 
 export function pushToTaskArray() {
+  const currentIndex = taskArray.length + 1;
   const userInput = userFirstInput.value;
   if (userInput) {
     const createTask = {
@@ -18,4 +18,5 @@ export function pushToTaskArray() {
     };
     taskArray.push(createTask);
   }
+  userFirstInput.value = '';
 }

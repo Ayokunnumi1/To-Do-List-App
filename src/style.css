@@ -18,7 +18,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 100vh;
 }
 
 .to-do-container {
@@ -35,7 +35,7 @@ h1 {
   width: 100%;
 }
 
-.list-items-container {
+.list-items-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
