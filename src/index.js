@@ -1,7 +1,12 @@
 import './style.css';
-import { pushToTaskArray, form } from './add-remove.js';
+import {
+  pushToTaskArray, form,
+} from './add-remove.js';
 import { addToLocalStorage } from './local-storage.js';
 import { displayTask } from './markUp.js';
+
+// const dustBin = document.querySelectorAll('.fa-trash-can');
+// console.log(dustBin);
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -10,4 +15,4 @@ form.addEventListener('submit', (e) => {
   displayTask();
 });
 
-window.addEventListener('DOMContentLoaded', displayTask());
+window.addEventListener('DOMContentLoaded', displayTask);
