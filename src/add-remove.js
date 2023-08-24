@@ -27,9 +27,9 @@ export function editTaskDescription(e) {
     // this index line converts the string in the p tag to an integer in base 10
     //  to get the index of task 2 be edited
     const index = parseInt(e.target.dataset.text, 10);
-    // console.log(index);
+    console.log(index);
     taskArray = taskArray.map((task) => {
-      console.log(task.index, index);
+      // console.log(task.index, index);
       if (task.index === index) {
         task.description = e.target.textContent.trim();
         return task;
@@ -37,7 +37,7 @@ export function editTaskDescription(e) {
       return task;
       // task[index].description = e.target.textContent.trim();
     });
-    console.log(taskArray);
+    // console.log(taskArray);
     addToLocalStorage();
     e.target.blur();
     e.target.contentEditable = false;
@@ -51,8 +51,19 @@ export function removedAndFilterArray(index) {
       return task;
     });
 }
-// console.log(removedAndFilterArray());
-// export function targetDustBinImg(e) {
-//   const index = e.target.dataset.trash;
-//   removedAndFilterArray(+index);
-// }
+
+export function lineThroughText(e) {
+  const listUserInput = document.querySelector('.list-user-input');
+  if (e.target.classList.contains('list-user-input')) {
+    const textNewIndex = parseInt(e.target.dataset.text, 10);
+    taskArray.forEach((task) => {
+      if (task.index === textNewIndex) {
+        // console.log(textNewIndex);
+        listUserInput.style.textDecoration = 'line-through';
+      }
+    });
+  }
+}
+
+// const checkBoxId = e.target.id;
+// console.log(textNewIndex);

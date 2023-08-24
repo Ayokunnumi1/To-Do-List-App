@@ -1,4 +1,6 @@
-import { taskArray, removedAndFilterArray, editTaskDescription } from './add-remove.js';
+import {
+  taskArray, removedAndFilterArray, editTaskDescription, lineThroughText,
+} from './add-remove.js';
 import { addToLocalStorage } from './local-storage.js';
 import { dbClickTaskDescription } from './remove-edit.js';
 
@@ -34,6 +36,11 @@ function displayTask() {
 
   editTextParagraph.forEach((edit) => {
     edit.addEventListener('focusout', editTaskDescription);
+  });
+
+  const checkBox = document.querySelectorAll('.checkbox');
+  checkBox.forEach((box) => {
+    box.addEventListener('click', lineThroughText);
   });
 }
 
