@@ -1,10 +1,11 @@
 import {
-  taskArray, removedAndFilterArray, editTaskDescription, lineThroughText,
+  pushToTaskArray, taskArray, removedAndFilterArray, lineThroughText,
 } from './add-remove.js';
 import { addToLocalStorage } from './local-storage.js';
-import { dbClickTaskDescription } from './remove-edit.js';
+import { dbClickTaskDescription, editTaskDescription } from './edit.js';
 
 const listItemsContainer = document.querySelector('.list-items-container');
+const form = document.querySelector('.form');
 function displayTask() {
   listItemsContainer.innerHTML = '';
   const createTaskMarkUp = taskArray.map((task) => {
@@ -18,8 +19,8 @@ function displayTask() {
     return li;
   }).join('');
   listItemsContainer.insertAdjacentHTML('beforeend', createTaskMarkUp);
+
   const dustBin = document.querySelectorAll('.fa-trash-can');
-  // console.log(dustBin);
   dustBin.forEach((bin) => {
     bin.addEventListener('click', (e) => {
       const index = e.target.dataset.trash;
@@ -43,6 +44,18 @@ function displayTask() {
     box.addEventListener('click', lineThroughText);
   });
 }
+
+form.addEventListener('submit', (e) => {
+  const userFirstInput = document.querySelector('#user-first-input');
+  const userInput = userFirstInput.value;
+  e.preventDefault();
+  if (userInput) {
+    pushToTaskArray(userInput);
+    displayTask();
+    addToLocalStorage();
+  }
+  userFirstInput.value = '';
+});
 
 // eslint-disable-next-line import/prefer-default-export
 export { displayTask };
