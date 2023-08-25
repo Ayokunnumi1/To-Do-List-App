@@ -1,8 +1,8 @@
 import {
-  pushToTaskArray, taskArray, removedAndFilterArray, lineThroughText,
+  pushToTaskArray, taskArray, removedAndFilterArray, changeCompleted,
+  dbClickTaskDescription, editTaskDescription,
 } from './add-remove.js';
 import { addToLocalStorage } from './local-storage.js';
-import { dbClickTaskDescription, editTaskDescription } from './edit.js';
 
 const listItemsContainer = document.querySelector('.list-items-container');
 const form = document.querySelector('.form');
@@ -41,7 +41,15 @@ function displayTask() {
 
   const checkBox = document.querySelectorAll('.checkbox');
   checkBox.forEach((box) => {
-    box.addEventListener('click', lineThroughText);
+    box.addEventListener('click', (e) => {
+      const listUserInput = document.querySelectorAll('.list-user-input');
+      const checkbox = e.target;
+      const taskId = checkbox.id;
+      if (checkbox.checked) {
+        listUserInput.style.textDecoration = 'line-through';
+        changeCompleted(taskId);
+      } else listUserInput.style.textDecoration = 'none';
+    });
   });
 }
 
