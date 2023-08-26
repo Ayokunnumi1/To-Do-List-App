@@ -107,6 +107,8 @@ h1 {
 .list-user-input {
   padding: 10px;
   width: 96%;
+  border: none;
+  outline: none;
 }
 
 .clear-all-btn {
