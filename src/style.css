@@ -1,3 +1,4 @@
+/* stylelint-disable property-no-unknown */
 *,
 *::before,
 *::after {
@@ -16,6 +17,8 @@ h1 {
   text-align: center;
   padding-top: 10px;
   color: #fff;
+  -webkit-text-stroke: 1px rgba(150, 54, 148);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .to-do {
@@ -24,6 +27,7 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  gap: 80px;
 }
 
 .to-do-container {
@@ -115,4 +119,14 @@ h1 {
 footer {
   text-align: center;
   color: #fff;
+  -webkit-text-stroke: 0.5px rgba(103, 65, 114);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-weight: 800;
+    font-size: 50px;
+  }
 }

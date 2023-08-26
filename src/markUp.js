@@ -72,5 +72,17 @@ clearAllButton.addEventListener('click', (e) => {
   addToLocalStorage();
 });
 
+const arrowButton = document.querySelector('.fa-rotate-90');
+arrowButton.addEventListener('click', (e) => {
+  const userFirstInput = document.querySelector('#user-first-input');
+  const userInput = userFirstInput.value;
+  e.preventDefault();
+  if (userInput) {
+    pushToTaskArray(userInput);
+    displayTask();
+    addToLocalStorage();
+  }
+  userFirstInput.value = '';
+});
 // eslint-disable-next-line import/prefer-default-export
 export { displayTask };
