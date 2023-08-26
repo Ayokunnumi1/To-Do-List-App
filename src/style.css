@@ -1,0 +1,136 @@
+/* stylelint-disable property-no-unknown */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: rgba(4, 59, 92);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+  color: #fff;
+  -webkit-text-stroke: 1px rgba(150, 54, 148);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.to-do {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  gap: 80px;
+}
+
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.list-items-container {
+  overflow-y: scroll;
+  border: 1px solid rgba(132, 140, 207);
+}
+
+.list-items-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+  padding: 0 10px;
+}
+
+#edit-text-input {
+  width: 96%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border: 3px solid red;
+}
+
+.checkBox-text-input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+}
+
+.paragraph-line {
+  text-decoration: line-through;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid lightgray;
+  padding-right: 10px;
+}
+
+.form:hover {
+  border: 2px solid rgba(189, 155, 25);
+}
+
+#user-first-input {
+  width: 96%;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.list-user-input {
+  padding: 10px;
+  width: 96%;
+}
+
+.clear-all-btn {
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  -webkit-text-stroke: 0.5px rgba(103, 65, 114);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-weight: 800;
+    font-size: 50px;
+  }
+
+  /* stylelint-disable-next-line indentation */
+  /* stylelint-disable-next-line indentation */
+  /* stylelint-disable-next-line no-missing-end-of-source-newline */
+}
