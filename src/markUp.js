@@ -1,6 +1,6 @@
 import {
   pushToTaskArray, taskArray, removedAndFilterArray, changeCompleted,
-  dbClickTaskDescription, editTaskDescription,
+  dbClickTaskDescription, editTaskDescription, clearAlCompleted,
 } from './add-remove.js';
 import { addToLocalStorage } from './local-storage.js';
 
@@ -39,16 +39,16 @@ function displayTask() {
     edit.addEventListener('focusout', editTaskDescription);
   });
 
+  // const listUserInput = document.querySelectorAll('.list-user-input');
   const checkBox = document.querySelectorAll('.checkbox');
   checkBox.forEach((box) => {
-    box.addEventListener('click', (e) => {
-      const listUserInput = document.querySelectorAll('.list-user-input');
-      const checkbox = e.target;
-      const taskId = checkbox.id;
-      if (checkbox.checked) {
-        listUserInput.style.textDecoration = 'line-through';
-        changeCompleted(taskId);
-      } else listUserInput.style.textDecoration = 'none';
+    box.addEventListener('change', (e) => {
+      const checkBoxId = e.target.id;
+      const checkBoxParent = e.target.parentElement;
+      const checkBoxParentTarget = checkBoxParent.querySelector('.list-user-input');
+      checkBoxParentTarget.classList.toggle('paragraph-line');
+      changeCompleted(+checkBoxId);
+      addToLocalStorage();
     });
   });
 }
@@ -63,6 +63,13 @@ form.addEventListener('submit', (e) => {
     addToLocalStorage();
   }
   userFirstInput.value = '';
+});
+
+const clearAllButton = document.querySelector('.clear-all-btn');
+clearAllButton.addEventListener('click', (e) => {
+  clearAlCompleted(e);
+  displayTask();
+  addToLocalStorage();
 });
 
 // eslint-disable-next-line import/prefer-default-export

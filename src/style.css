@@ -8,9 +8,14 @@
   text-decoration: none;
 }
 
+body {
+  background-color: rgba(4, 59, 92);
+}
+
 h1 {
   text-align: center;
   padding-top: 10px;
+  color: #fff;
 }
 
 .to-do {
@@ -18,21 +23,26 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .to-do-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid grey;
   border-radius: 10px;
   width: 70%;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .form-container {
   width: 100%;
+}
+
+.list-items-container {
+  overflow-y: scroll;
+  border: 1px solid rgba(132, 140, 207);
 }
 
 .list-items-content {
@@ -66,6 +76,10 @@ h1 {
   padding: 10px 8px;
 }
 
+.paragraph-line {
+  text-decoration: line-through;
+}
+
 .form {
   display: flex;
   justify-content: space-between;
@@ -94,12 +108,11 @@ h1 {
 .clear-all-btn {
   padding: 10px;
   width: 100%;
-  border-radius: 3px;
   outline: none;
   cursor: pointer;
 }
 
 footer {
   text-align: center;
-/* margin-top: 20px; */
+  color: #fff;
 }

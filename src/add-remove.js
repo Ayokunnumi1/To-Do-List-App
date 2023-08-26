@@ -67,12 +67,23 @@ export const editTaskDescription = (e) => {
 //     });
 //   }
 // }
-export const changeCompleted = (e) => {
-  const { id } = e.target;
-  const { index } = taskArray;
-  if (id === index) {
-    taskArray.forEach((task) => {
-      task.completed = true;
-    });
-  }
+export const changeCompleted = (index) => {
+  taskArray = taskArray.map((task) => {
+    if (task.index === index) {
+      task.completed = !task.completed;
+    }
+    return task;
+  });
 };
+
+export const clearAlCompleted = () => {
+  taskArray = taskArray.filter((task) => !task.completed);
+};
+
+// const { id } = e.target;
+// const { index } = taskArray;
+// if (id === index) {
+//   taskArray.forEach((task) => {
+//     task.completed = true;
+//   });
+// }
